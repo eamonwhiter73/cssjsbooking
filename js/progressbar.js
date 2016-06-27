@@ -74,13 +74,13 @@ jQuery(document).ready(function() {
 
             console.log(jQuery("#infoPanelBPmobile").position());
 
-            if(offset.top == 180) {
-              console.log('in offset');
-              jQuery('html, body').stop().animate({ scrollTop: "180" }, 500, function() {
+            if(offset.top == 0) {
+              jQuery('html, body').stop().animate({ scrollTop: "+=180vh" }, 500, function() {
               }); 
             }
             else {
-              jQuery('html, body').stop().animate({ scrollTop: "+=180vh" }, 500, function() {
+              console.log('in offset');
+              jQuery('html, body').stop().animate({ scrollTop: offset.top }, 500, function() {
               }); 
             }
 
@@ -165,16 +165,35 @@ jQuery(document).ready(function() {
             "display": "inline",
           });
 
-          jQuery('div.panel-primary').after("<div id='infoPanelBP'>divstuff</div>");
+          jQuery('div.panel-primary').after("<div id='infoPanelBPmobile'>MORE INFO</div>");
 
-          jQuery('.btn-zingtree').on('click', '.toolTipBP', function(){
+          jQuery('.toolTipBP').click(function(e) {
+
             var infoHover = jQuery(this).text();
             var infoPanelHTML = "<p>This is the info panel for: " + infoHover + "</p>";
             
             //console.log(jQueryinfoHover);
             //hover code - info version 1
-            jQuery('div#infoPanelBP').html(infoPanelHTML);
+            jQuery('div#infoPanelBPmobile').html(infoPanelHTML);
+
+            var offset = jQuery("#infoPanelBPmobile").offset()
+
+            console.log(jQuery("#infoPanelBPmobile").position());
+
+            if(offset.top == 0) {
+              jQuery('html, body').stop().animate({ scrollTop: "+=270vh" }, 500, function() {
+              }); 
+            }
+            else {
+              console.log('in offset');
+              jQuery('html, body').stop().animate({ scrollTop: offset.top }, 500, function() {
+              }); 
+            }
+
+            e.preventDefault(); 
           });
+
+
 
 
           jQuery("div.panel-primary").css({
@@ -200,7 +219,7 @@ jQuery(document).ready(function() {
           jQuery('a.btn-zingtree.list-group-item').css({
             "font-size": "2vh",
             'border-right-style': 'none',
-            "height": "8.5vh"
+            "height": "14.5vh"
           })
 
           jQuery("div#question_area").css({

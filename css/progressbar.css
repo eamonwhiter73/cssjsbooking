@@ -304,6 +304,8 @@ fa-arrow-right has a unicode value of f061. See http://fortawesome.github.io/Fon
     color: rgb(8,113,125);
     text-align: center;
     padding-top: 3vh;
+    /*top: 70vh;*/
+    vertical-align: top;
 }
 
 .panel-primary {
@@ -673,4 +675,5 @@ background-color:rgba(0, 173, 255, 0.13);
 .bottomrect {
     height: 46%;
 }
+
 }
