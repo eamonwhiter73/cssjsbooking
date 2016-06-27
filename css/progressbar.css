@@ -285,8 +285,25 @@ fa-arrow-right has a unicode value of f061. See http://fortawesome.github.io/Fon
     margin-right: 0;
     height: 100%;
     position: absolute;
-    vertical-align: top;
     white-space: pre-line;
+    z-index: 99998;
+}
+
+#infoPanelBPmobile{
+    /* min-height:300px; /* prevent too much shrinkage on low answer questions */
+    background-color: rgb(231,252,255);
+    width: 92%;
+    display: inline-block;
+    /* right: 15px; */
+    margin-left: 0;
+    margin-right: 0;
+    height: 100%;
+    position: absolute;
+    white-space: pre-line;
+    z-index: 99999;
+    color: rgb(8,113,125);
+    text-align: center;
+    padding-top: 3vh;
 }
 
 .panel-primary {

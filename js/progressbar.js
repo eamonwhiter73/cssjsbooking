@@ -26,6 +26,7 @@ jQuery(document).ready(function() {
       jQuery('div#node-433800199-5>.row>.col-md-12>.panel-primary>.panel-body').css({
         "padding": "0vh"
       });*/
+      var panelUp = false;
 
       jQuery('div#node-433800199-7>.row>.col-md-12>.panel-primary>.panel-body').css({
         "padding": "2vh"
@@ -58,15 +59,32 @@ jQuery(document).ready(function() {
             "display": "inline",
           });
 
-          jQuery('div.panel-primary').after("<div id='infoPanelBP'>divstuff</div>");
+          jQuery('div.panel-primary').after("<div id='infoPanelBPmobile'>MORE INFO</div>");
 
-          jQuery('.btn-zingtree').on('click', '.toolTipBP', function(){
+          jQuery('.toolTipBP').click(function(e) {
+
             var infoHover = jQuery(this).text();
             var infoPanelHTML = "<p>This is the info panel for: " + infoHover + "</p>";
             
             //console.log(jQueryinfoHover);
             //hover code - info version 1
-            jQuery('div#infoPanelBP').html(infoPanelHTML);
+            jQuery('div#infoPanelBPmobile').html(infoPanelHTML);
+
+            var offset = jQuery("#infoPanelBPmobile").offset()
+
+            console.log(jQuery("#infoPanelBPmobile").position());
+
+            if(offset.top == 180) {
+              console.log('in offset');
+              jQuery('html, body').stop().animate({ scrollTop: "180" }, 500, function() {
+              }); 
+            }
+            else {
+              jQuery('html, body').stop().animate({ scrollTop: "+=180vh" }, 500, function() {
+              }); 
+            }
+
+            e.preventDefault(); 
           });
 
 
@@ -93,7 +111,7 @@ jQuery(document).ready(function() {
           jQuery('a.btn-zingtree.list-group-item').css({
             "font-size": "2vh",
             'border-right-style': 'none',
-            "height": "8.5vh"
+            "height": "12vh"
           })
 
           jQuery("div#question_area").css({
@@ -344,23 +362,52 @@ jQuery(document).ready(function() {
 
     jQuery( window ).resize(function() {
 
-      if(jQuery(window).width() < 481 && jQuery(window).width() > 320) {
-        jQuery('.logo').hide();
-        jQuery('h1.entry-title').hide();
-        jQuery('div#title_row').hide(); 
-        jQuery('#main-footer').hide();
-        jQuery('.widewrapper>.container>.row').hide();  
+      if(jQuery(window).width() < 321) {
+          jQuery('.logo').hide();
+          jQuery('h1.entry-title').hide();
+          jQuery('div#title_row').hide(); 
+          jQuery('#main-footer').hide();
+          jQuery('.widewrapper>.container>.row').hide();  
 
-
-        jQuery("ul#qa-area").css({
+          jQuery("ul#qa-area").css({
             "padding": "0 0 0 0",
             "width": "100%",
             "display": "inline",
           });
 
+          jQuery('div.panel-primary').after("<div id='infoPanelBPmobile'>MORE INFO</div>");
+
+          jQuery('.toolTipBP').click(function(e) {
+
+            var infoHover = jQuery(this).text();
+            var infoPanelHTML = "<p>This is the info panel for: " + infoHover + "</p>";
+            
+            //console.log(jQueryinfoHover);
+            //hover code - info version 1
+            jQuery('div#infoPanelBPmobile').html(infoPanelHTML);
+
+            var offset = jQuery("#infoPanelBPmobile").offset()
+
+            console.log(jQuery("#infoPanelBPmobile").position());
+
+            if(offset.top == 180) {
+              console.log('in offset');
+              jQuery('html, body').stop().animate({ scrollTop: "180" }, 500, function() {
+              }); 
+            }
+            else {
+              jQuery('html, body').stop().animate({ scrollTop: "+=180vh" }, 500, function() {
+              }); 
+            }
+
+            e.preventDefault(); 
+          });
+
+
           jQuery("div.panel-primary").css({
             "margin-bottom": "0px",
-            "height": "50vh"
+            "border-style": "none",
+            "border-width": "none",
           });
 
           jQuery("div.panel-heading").css({
@@ -371,96 +418,219 @@ jQuery(document).ready(function() {
             "height": "8vh"
           });
 
-          jQuery("#infoPanelBP").css({
-            "width": "100%",
-            "height": "50%",
-            "vertical-align": "bottom"
+          jQuery("div#infoPanelBP").css({
+            "width": "92%",
+            "height": "100vh",
+            "vertical-align": "top",
           })
 
           jQuery('a.btn-zingtree.list-group-item').css({
             "font-size": "2vh",
-            'border-right-style': 'none'
+            'border-right-style': 'none',
+            "height": "12vh"
           })
 
           jQuery("div#question_area").css({
             'text-align': 'center',
             'border-right-style': 'none',
-            'height': "8vh",
-            'vertical-align': "center"
+            'vertical-align': "center",
           });
 
           jQuery("div#question_area>li").css({
-            "height": "8vh"
+
           });
 
           jQuery("div#question_area>li>h4").css({
-            "margin-top": "0.8vh"
+            'font-size': "2.2vh",
+            'vertical-align': "center"
           });
-        
-        jQuery('#qa-area > div.answers > .btn-zingtree').mouseenter(function(){
-          jQuery(this).css("background-color", "rgb(231,252,255)");
-          jQuery(this).css("border-right-color", "none");
-          jQuery(this).css("border-right-width", "none");
-          jQuery(this).css("border-right-style", "none");
-        });
 
-        jQuery('#qa-area > div.answers > .btn-zingtree').mouseleave(function(){
-          jQuery(this).css("background-color", "rgb(255,255,255");
-          jQuery(this).css("border-right-color", "none");
-          jQuery(this).css("border-right-width", "none");
-          jQuery(this).css("border-right-style", "none");
-        });
+           jQuery('.container').css({
+              "padding-right": "0px",
+              "padding-left": "0px",
+              "width": "100%",
+              "padding-top": "0px"
+          });
+          
+          jQuery('#qa-area > div.answers > .btn-zingtree').mouseenter(function(){
+            jQuery(this).css("background-color", "rgb(231,252,255)");
+            jQuery(this).css("border-right-color", "none");
+            jQuery(this).css("border-right-width", "none");
+            jQuery(this).css("border-right-style", "none");
+          });
 
-      }
+          jQuery('#qa-area > div.answers > .btn-zingtree').mouseleave(function(){
+            jQuery(this).css("background-color", "rgb(255,255,255");
+            jQuery(this).css("border-right-color", "none");
+            jQuery(this).css("border-right-width", "none");
+            jQuery(this).css("border-right-style", "none");
+          });
 
-      if(jQuery(window).width() < 768 && jQuery(window).width() > 480) {
-        jQuery('.logo').hide();
-        jQuery("ul#qa-area").css({
-          "padding": "0 0 0 0",
-          "width": "100%",
-          "display": "inline",
-        });
+        }
 
-        jQuery("#infoPanelBP").css({
-          "width": "100%",
-          "height": "50%",
-          "vertical-align": "bottom"
-        })
+      if(jQuery(window).width() < 481 && jQuery(window).width() > 320) {
+          jQuery('.logo').hide();
+          jQuery('h1.entry-title').hide();
+          jQuery('div#title_row').hide(); 
+          jQuery('#main-footer').hide();
+          jQuery('.widewrapper>.container>.row').hide();  
 
-        jQuery('a.btn-zingtree.list-group-item').css({
-          "font-size": "2.5vh",
-          'border-right-style': 'none'
-        })
+          jQuery("ul#qa-area").css({
+            "padding": "0 0 0 0",
+            "width": "100%",
+            "display": "inline",
+          });
 
-        jQuery("div#question_area").css({
-          'text-align': 'center',
-          'border-right-style': 'none'
-        });
+          jQuery('div.panel-primary').after("<div id='infoPanelBP'>divstuff</div>");
 
-        jQuery('#qa-area > div.answers > .btn-zingtree').mouseenter(function(){
-          jQuery(this).css("background-color", "rgb(231,252,255)");
-          jQuery(this).css("border-right-color", "none");
-          jQuery(this).css("border-right-width", "none");
-          jQuery(this).css("border-right-style", "none");
-        });
+          jQuery('.btn-zingtree').on('click', '.toolTipBP', function(){
+            var infoHover = jQuery(this).text();
+            var infoPanelHTML = "<p>This is the info panel for: " + infoHover + "</p>";
+            
+            //console.log(jQueryinfoHover);
+            //hover code - info version 1
+            jQuery('div#infoPanelBP').html(infoPanelHTML);
+          });
 
-        jQuery('#qa-area > div.answers > .btn-zingtree').mouseleave(function(){
-          jQuery(this).css("background-color", "rgb(255,255,255");
-          jQuery(this).css("border-right-color", "none");
-          jQuery(this).css("border-right-width", "none");
-          jQuery(this).css("border-right-style", "none");
-        });
 
-      }
+          jQuery("div.panel-primary").css({
+            "margin-bottom": "0px",
+            "border-style": "none",
+            "border-width": "none",
+          });
 
-      if(jQuery(window).width() == 768) {
-        jQuery('.logo').css({
-          "display": "none"
-        });
-      }
+          jQuery("div.panel-heading").css({
+            "height": "8vh"
+          });
 
-      if(jQuery(window).width() > 768 && jQuery(window).width() < 992) {
+          jQuery("div.progress-indicator").css({
+            "height": "8vh"
+          });
 
+          jQuery("div#infoPanelBP").css({
+            "width": "92%",
+            "height": "100vh",
+            "vertical-align": "top",
+          })
+
+          jQuery('a.btn-zingtree.list-group-item').css({
+            "font-size": "2vh",
+            'border-right-style': 'none',
+            "height": "8.5vh"
+          })
+
+          jQuery("div#question_area").css({
+            'text-align': 'center',
+            'border-right-style': 'none',
+            'vertical-align': "center",
+          });
+
+          jQuery("div#question_area>li").css({
+
+          });
+
+          jQuery("div#question_area>li>h4").css({
+            'font-size': "2.2vh",
+            'vertical-align': "center"
+          });
+
+           jQuery('.container').css({
+              "padding-right": "0px",
+              "padding-left": "0px",
+              "width": "100%",
+              "padding-top": "0px"
+          });
+          
+          jQuery('#qa-area > div.answers > .btn-zingtree').mouseenter(function(){
+            jQuery(this).css("background-color", "rgb(231,252,255)");
+            jQuery(this).css("border-right-color", "none");
+            jQuery(this).css("border-right-width", "none");
+            jQuery(this).css("border-right-style", "none");
+          });
+
+          jQuery('#qa-area > div.answers > .btn-zingtree').mouseleave(function(){
+            jQuery(this).css("background-color", "rgb(255,255,255");
+            jQuery(this).css("border-right-color", "none");
+            jQuery(this).css("border-right-width", "none");
+            jQuery(this).css("border-right-style", "none");
+          });
+
+        }
+
+        if(jQuery(window).width() < 768 && jQuery(window).width() > 480) {
+          jQuery('.logo').hide();
+
+          jQuery("ul#qa-area").css({
+            "padding": "0 0 0 0",
+            "width": "100%",
+            "display": "inline",
+          });
+
+          jQuery("#infoPanelBP").css({
+            "width": "100%",
+            "height": "50%",
+            "vertical-align": "bottom",
+            "display": "inline"
+          })
+
+          jQuery('a.btn-zingtree.list-group-item').css({
+            "font-size": "2.5vh",
+            'border-right-style': 'none'
+          })
+
+          jQuery("div#question_area").css({
+            'text-align': 'center',
+            'border-right-style': 'none'
+          });
+
+          jQuery(".progress-indicator").css({
+            'margin-left': '6%'
+          });
+
+          jQuery(".leftspace").css({
+            'margin-left': '-6%',
+            'width': "18%"
+          });
+
+          jQuery(".toprect").css({
+            'margin-left': '6%'
+          });
+
+          jQuery(".bottomrect").css({
+            'margin-left': '6%'
+          });
+
+          jQuery('#qa-area > div.answers > .btn-zingtree').mouseenter(function(){
+            jQuery(this).css("background-color", "rgb(231,252,255)");
+            jQuery(this).css("border-right-color", "none");
+            jQuery(this).css("border-right-width", "none");
+            jQuery(this).css("border-right-style", "none");
+          });
+
+          jQuery('#qa-area > div.answers > .btn-zingtree').mouseleave(function(){
+            jQuery(this).css("background-color", "rgb(255,255,255");
+            jQuery(this).css("border-right-color", "none");
+            jQuery(this).css("border-right-width", "none");
+            jQuery(this).css("border-right-style", "none");
+          });
+        };
+
+        if(jQuery(window).width() == 768) {
+          jQuery('.logo').css({
+            "display": "none"
+          });
+
+          jQuery('.progress-indicator').css({
+            "margin-left": "4%"
+          });
+
+          jQuery(".leftspace").css({
+            'margin-left': '-10%',
+            'width': "22%"
+          });
+        }
+
+        if(jQuery(window).width() > 768 && jQuery(window).width() < 992) {
           jQuery('a.btn-zingtree.list-group-item').css({
             "font-size": "1.4vh"
           })
@@ -480,12 +650,21 @@ jQuery(document).ready(function() {
 
           jQuery('a.btn-zingtree.list-group-item').css({
             "font-size": "2vh",
-            "border-right-style": "solid"
+            "border-right-style": "solid",
           })
 
           jQuery("div#question_area").css({
-            'text-align': 'left',
+            "text-align": "left",
             "border-right-style": "solid"
+          });
+
+          jQuery('.progress-indicator').css({
+            "margin-left": "4%"
+          });
+
+          jQuery(".leftspace").css({
+            'margin-left': '-10%',
+            'width': "22%"
           });
         }
 
