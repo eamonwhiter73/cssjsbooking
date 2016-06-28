@@ -6,6 +6,10 @@ jQuery(document).ready(function() {
     jQuery(".circcont").width(h / 5);
   });*/
 
+var arraypicked = ['node-433800199-1'];
+
+
+
     jQuery(window).load(function() {
       /*jQuery('div#node-433800199-1>.row>.col-md-12>.panel-primary>.panel-body').css({
         "padding": "0vh"
@@ -26,7 +30,6 @@ jQuery(document).ready(function() {
       jQuery('div#node-433800199-5>.row>.col-md-12>.panel-primary>.panel-body').css({
         "padding": "0vh"
       });*/
-      var panelUp = false;
 
       jQuery('div#node-433800199-7>.row>.col-md-12>.panel-primary>.panel-body').css({
         "padding": "2vh"
@@ -46,6 +49,40 @@ jQuery(document).ready(function() {
 
       jQuery('div#node-433800199-13>.row>.col-md-12>.panel-primary>.panel-body>#node-content').empty();
 
+      jQuery('body').on("swipeleft",function(e){
+        console.log(arraypicked);
+
+        console.log(arraypicked[parseInt(arraypicked.indexOf(jQuery('.zingtree-node:visible').prop('id')))]);
+        
+        jQuery(arraypicked[parseInt(arraypicked.indexOf(jQuery('.zingtree-node:visible').prop('id')))]).css({
+          "display": "none"
+        })
+        
+        if(arraypicked[parseInt(arraypicked.indexOf(jQuery('.zingtree-node:visible').prop('id')) + 1)]) {
+          jQuery('div#' + arraypicked[parseInt(arraypicked.indexOf(jQuery('.zingtree-node:visible').prop('id')) + 1)] + '.zingtree-node').css({
+            "display": "block"
+          })
+        }
+        
+        e.preventDefault();
+      });
+
+      jQuery('body').on("swiperight",function(e){
+        console.log(arraypicked);
+
+        console.log(arraypicked[parseInt(arraypicked.indexOf(jQuery('.zingtree-node:visible').prop('id')) - 1)]);
+        
+        jQuery(arraypicked[parseInt(arraypicked.indexOf(jQuery('.zingtree-node:visible').prop('id')) + 1)]).css({
+          "display": "none"
+        })
+        
+        jQuery('div#' + arraypicked[parseInt(arraypicked.indexOf(jQuery('.zingtree-node:visible').prop('id')) - 1)] + '.zingtree-node').css({
+          "display": "block"
+        })
+        
+        e.preventDefault();
+      });
+
       if(jQuery(window).width() < 321) {
           jQuery('.logo').hide();
           jQuery('h1.entry-title').hide();
@@ -58,6 +95,12 @@ jQuery(document).ready(function() {
             "width": "100%",
             "display": "inline",
           });
+
+          jQuery('.btn-zingtree').on('click', function(e){
+            arraypicked.push(jQuery('.zingtree-node:visible').prop('id'));
+            console.log(jQuery('.zingtree-node:visible').prop('id'));
+            e.preventDefault();
+          })
 
           jQuery('div.panel-primary').after("<div id='infoPanelBPmobile'>MORE INFO</div>");
 
@@ -164,6 +207,12 @@ jQuery(document).ready(function() {
             "width": "100%",
             "display": "inline",
           });
+
+          jQuery('.btn-zingtree').on('click', function(e){
+            arraypicked.push(jQuery('.zingtree-node:visible').prop('id'));
+            console.log(jQuery('.zingtree-node:visible').prop('id'));
+            e.preventDefault();
+          })
 
           jQuery('div.panel-primary').after("<div id='infoPanelBPmobile'>MORE INFO</div>");
 

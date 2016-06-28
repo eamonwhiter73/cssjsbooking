@@ -1,3 +1,7 @@
+body {
+    margin: 0;
+}
+
 .progress-indicator {
     display: -webkit-box;
     display: -moz-box;
@@ -260,7 +264,7 @@ fa-arrow-right has a unicode value of f061. See http://fortawesome.github.io/Fon
 .panel-body {
     background-color: #ffffff; 
     border-top-style: none;
-    font-size: 3vh;
+    font-size: 2vh;
     color: #000;
 }
 
