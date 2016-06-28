@@ -339,10 +339,10 @@ var arraypicked = ['node-433800199-1'];
             'margin-left': '6%'
           });
 
-          /*jQuery(".leftspace").css({
+          jQuery(".leftspace").css({
             'margin-left': '-6%',
             'width': "18%"
-          });*/
+          });
 
           jQuery(".toprect").css({
             'margin-left': '6%'
@@ -376,10 +376,10 @@ var arraypicked = ['node-433800199-1'];
             "margin-left": "4%"
           });
 
-          /*jQuery(".leftspace").css({
+          jQuery(".leftspace").css({
             'margin-left': '-10%',
             'width': "22%"
-          });*/
+          });
         }
 
         if(jQuery(window).width() > 768 && jQuery(window).width() < 992) {
@@ -414,10 +414,10 @@ var arraypicked = ['node-433800199-1'];
             "margin-left": "4%"
           });
 
-          /*jQuery(".leftspace").css({
+          jQuery(".leftspace").css({
             'margin-left': '-10%',
             'width': "22%"
-          });*/
+          });
         }
 
         if(jQuery(window).width() > 991) {
@@ -442,12 +442,6 @@ var arraypicked = ['node-433800199-1'];
             "width": "100%",
             "display": "inline",
           });
-
-          jQuery('.btn-zingtree').on('click', function(e){
-            arraypicked.push(jQuery('.zingtree-node:visible').prop('id'));
-            console.log(jQuery('.zingtree-node:visible').prop('id'));
-            e.preventDefault();
-          })
 
           jQuery('div.panel-primary').after("<div id='infoPanelBPmobile'>MORE INFO</div>");
 
@@ -554,12 +548,6 @@ var arraypicked = ['node-433800199-1'];
             "width": "100%",
             "display": "inline",
           });
-
-          jQuery('.btn-zingtree').on('click', function(e){
-            arraypicked.push(jQuery('.zingtree-node:visible').prop('id'));
-            console.log(jQuery('.zingtree-node:visible').prop('id'));
-            e.preventDefault();
-          })
 
           jQuery('div.panel-primary').after("<div id='infoPanelBPmobile'>MORE INFO</div>");
 
@@ -686,6 +674,11 @@ var arraypicked = ['node-433800199-1'];
             'margin-left': '6%'
           });
 
+          jQuery(".leftspace").css({
+            'margin-left': '-6%',
+            'width': "18%"
+          });
+
           jQuery(".toprect").css({
             'margin-left': '6%'
           });
@@ -714,14 +707,14 @@ var arraypicked = ['node-433800199-1'];
             "display": "none"
           });
 
-          /*jQuery('.progress-indicator').css({
+          jQuery('.progress-indicator').css({
             "margin-left": "4%"
-          });*/
+          });
 
-          /*jQuery(".leftspace").css({
+          jQuery(".leftspace").css({
             'margin-left': '-10%',
             'width': "22%"
-          });*/
+          });
         }
 
         if(jQuery(window).width() > 768 && jQuery(window).width() < 992) {
@@ -756,10 +749,10 @@ var arraypicked = ['node-433800199-1'];
             "margin-left": "4%"
           });
 
-          /*jQuery(".leftspace").css({
+          jQuery(".leftspace").css({
             'margin-left': '-10%',
             'width': "22%"
-          });*/
+          });
         }
 
         if(jQuery(window).width() > 991) {

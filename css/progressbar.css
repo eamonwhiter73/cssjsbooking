@@ -375,7 +375,7 @@ background-color:rgba(0, 173, 255, 0.13);
         width: 6vh;
         height:0;
         padding-bottom: 6vh;
-        bottom: 1vh;
+        bottom: 4.4vh;
         -moz-border-radius: 50%; 
         -webkit-border-radius: 50%; 
         border-radius: 50%;
@@ -391,7 +391,7 @@ background-color:rgba(0, 173, 255, 0.13);
     .circle:hover {
         width: 7vh;
         padding-bottom: 7vh;
-        bottom: 0.5vh;
+        bottom: 3.8vh;
         left: -3px;
     }
 
@@ -417,7 +417,7 @@ background-color:rgba(0, 173, 255, 0.13);
 
     .completed {
     background-color: #21B4C4;
-    bottom: 1vh;
+    bottom: 4.4vh;
     -moz-box-shadow: inset 1px 1px 1px rgba(155, 155, 155, .2), inset -1px -1px 1px rgba(0, 0, 0, .2);
     -webkit-box-shadow: inset 1px 1px 1px rgba(155, 155, 155, .2), inset -1px -1px 1px rgba(0, 0, 0, .2);
     box-shadow: inset 1px 1px 1px rgba(155, 155, 155, .2), inset -1px -1px 1px rgba(0, 0, 0, .2);
@@ -425,7 +425,7 @@ background-color:rgba(0, 173, 255, 0.13);
 
 .completed:hover {
     background-color: #21B4C4;
-    bottom: 0.5vh;
+    bottom: 4.1vh;
     -moz-box-shadow: inset 1px 1px 1px rgba(155, 155, 155, .2), inset -1px -1px 1px rgba(0, 0, 0, .2);
     -webkit-box-shadow: inset 1px 1px 1px rgba(155, 155, 155, .2), inset -1px -1px 1px rgba(0, 0, 0, .2);
     box-shadow: inset 1px 1px 1px rgba(155, 155, 155, .2), inset -1px -1px 1px rgba(0, 0, 0, .2);
@@ -434,7 +434,7 @@ background-color:rgba(0, 173, 255, 0.13);
 .active:hover {
     width: 7vh;
     padding-bottom: 7vh;
-    bottom: 0.3vh;
+    bottom: 3.9vh;
     left: -2px;
     -moz-box-shadow: inset 1px 1px 1px rgba(155, 155, 155, .2), inset -1px -1px 1px rgba(0, 0, 0, .2);
     -webkit-box-shadow: inset 1px 1px 1px rgba(155, 155, 155, .2), inset -1px -1px 1px rgba(0, 0, 0, .2);
@@ -445,7 +445,7 @@ background-color:rgba(0, 173, 255, 0.13);
     background-color: rgba(144, 195, 212, 1.0);
     width: 7vh;
     padding-bottom: 7vh;
-    bottom: 0.3vh;
+    bottom: 3.9vh;
     left: -2px;
     -moz-box-shadow: inset 1px 1px 1px rgba(155, 155, 155, .2), inset -1px -1px 1px rgba(0, 0, 0, .2);
     -webkit-box-shadow: inset 1px 1px 1px rgba(155, 155, 155, .2), inset -1px -1px 1px rgba(0, 0, 0, .2);
@@ -454,15 +454,15 @@ background-color:rgba(0, 173, 255, 0.13);
 
 .leftspace {
     background-color: #056B77;
-    width: 18vw;
+    width: 13%;
     height: 100%;
     position: absolute;
-    left: -8vw;
+    left: -6%;
     z-index: 4;
 }
 
 .progress-indicator {
-    margin-left: 2%;
+    margin-left: 5.5%;
 }
 
 
@@ -561,7 +561,7 @@ background-color:rgba(0, 173, 255, 0.13);
 }
 
 .progress-indicator {
-    margin-left: 5%;
+    margin-left: 7vw;
 }
 
 .toprect {
@@ -578,7 +578,7 @@ background-color:rgba(0, 173, 255, 0.13);
 
 /* Portrait phones and smaller */
 @media (max-width: 320px) {
-    .circle {
+        .circle {
         width: 4vh;
         height:0;
         padding-bottom: 4vh;
